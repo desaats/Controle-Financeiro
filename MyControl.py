@@ -10,22 +10,36 @@ def nome_do_programa():
     print(linha)
 
 def exibir_opcoes():
-    print("1. Cadastrar restaurante")
-    print("2. Listar restaurante")
-    print("3. Ativar restaurante")
+    print("1. Creditar na conta")
+    print("2. Debitar na conta")
+    print("3. Mostrar extrato do ultimo mês")
     print("4. Sair\n")
     
     opcao = int(input("Digite uma opção valida: "))
     return escolha_opcao(opcao)
+
+def saldo_conta():
+    saldo = 3000
+    return saldo
+
+def novo_debito():
+    receita = saldo_conta()
+    debito = float(input("Digite o valor a debitar: "))
+    valor_a_debitar = receita - debito
+    print(f"Valor atualizado: {valor_a_debitar}")
+
+def novo_credito():
+    receita = saldo_conta()
+    credito = float(input("Digite o valor a creditar "))
+    valor_a_creditar = receita + credito
+    print(f"Valor atualizado: {valor_a_creditar}")
     
 def escolha_opcao(opcao):
     
      match opcao:
         case 1:
-            print("Você escolheu o credito")
-            #novo_credito()
+            novo_credito()
         case 2:
-            print("Você escolheu o debito")
             novo_debito()
         case 3:
             print("Você escolheu o extrato")
@@ -38,12 +52,6 @@ def escolha_opcao(opcao):
             
      return exibir_opcoes()
 
-
-def novo_debito():
-    receita = 2450
-    gasto = float(input("Digite o valor gasto: "))
-    valor_atualizado = receita - gasto
-    print(f"Valor atualizado: {valor_atualizado}")
 
 
 def main():
