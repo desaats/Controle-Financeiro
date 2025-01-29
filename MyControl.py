@@ -1,6 +1,6 @@
 import os 
 import time
-from modelos.conta import Conta
+from modelos.contas.conta import Conta
 
 def nome_do_programa():
 
